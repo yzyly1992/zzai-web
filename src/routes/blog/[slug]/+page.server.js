@@ -3,8 +3,8 @@ import { posts } from "./data.js";
 
 export async function load({ params }) {
     const data = await fetch(`/api/posts/${params.slug}`);
-    const post = await data.json();
-    console.log(post);
+    const post_data = await data.json();
+    const post = post_data.results[0];
     if (!post) {
         return error(404, "Post not found");
     };
