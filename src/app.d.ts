@@ -4,14 +4,14 @@ declare global {
 	namespace App {
         interface Platform {
             env: {
-                ZZAI_DB: D1Database;
+                DB: D1Database;
             };
             context: {
                 waitUntil(promise: Promise<any>): void;
             };
-            caches: CacheStorage & { default: Cache };
-            cf: CfProperties
-            ctx: ExecutionContext
+            // caches: CacheStorage & { default: Cache };
+            // cf: CfProperties
+            // ctx: ExecutionContext
         }
     }
 }

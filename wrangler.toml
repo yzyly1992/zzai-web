@@ -1,8 +1,8 @@
 name = "zzai-web"
-compatibility_date = "2024-03-01"
+# compatibility_date = "2024-02-22"
 
 [[d1_databases]]
-binding = "ZZAI_DB"
+binding = "DB"
 database_name = "zzai-db"
 database_id = "c95a0c6b-bada-48f8-95a7-c5216173c38a"
 

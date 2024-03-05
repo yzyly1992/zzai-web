@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
-    "preview": "npm run build && wrangler pages dev .svelte-kit/cloudflare",
+    "preview": "npm run build && wrangler pages dev .svelte-kit/cloudflare --compatibility-date=2024-02-22 --live-reload",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "deploy": "npm run build && wrangler pages deploy .svelte-kit/cloudflare",
