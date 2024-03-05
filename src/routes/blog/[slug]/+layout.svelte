@@ -1,5 +1,12 @@
-<script>
-    export let data;
+<script lang="ts">
+	import { onMount } from 'svelte';
+	/**
+     * @type {any}
+     */
+	let data: any[] = [];
+	onMount(async () => {
+        data = await fetch('/api/posts').then((x: any) => x.json()).then((x) => x.results);
+	});
 </script>
 
 <div class='layout'>
@@ -8,20 +15,45 @@
     </main>
     <aside>
         <h2>More Posts</h2>
-        <ul>
-            {#each data.summaries as post}
-                <li><a href={`/blog/${post.slug}`}>{post.title}</a></li>
+        <div class="grid">
+            {#each data as post}
+                <a href={`/blog/${post.slug}`} class="card">
+                    <img src={post.cover} alt="cover image of {post.title}" class="cover">
+                    <p class="title">{post.title}</p>
+                </a>
             {/each}
-        </ul>
+        </div>
     </aside>
 </div>
 
 <style>
-	@media (min-width: 640px) {
-		.layout {
-			display: grid;
-			gap: 2em;
-			grid-template-columns: 1fr 16em;
-		}
-	}
+    aside {
+        max-width: 720px;
+        margin: 2rem auto 6rem auto;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1rem;
+    }
+    .card {
+        text-decoration: none;
+        color: inherit;
+        border: 1px solid #F2F2F2;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .cover {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 0.5rem;
+    }
+    .title {
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
 </style>
