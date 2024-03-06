@@ -1,17 +1,84 @@
-<script>
-    export let data;
-</script>
-
 <svelte:head>
     <title>Zzai | Master Top Tech Skills</title>
     <meta name="description" content="Zzai - a tech skills sharing platform. Master the top-notch technical skills in AI, Software Engineering, and Web Development. Stay updated with the latest technologies through hands-on tutorials and insightful content.">
     <meta name="keywords" content="Tech skills, Technical skills, AI, Artificial intelligence, Software engineering, Web development, Hands-on tutorials, Technology updates, Learning platform, Tech education, Coding skills, Programming languages, IT skills, Tech tutorials, Online learning, Tech mastery, Cutting-edge technology, Tech insights, Software development, Digital skills">
 </svelte:head>
 
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-<ul class="posts">
-    {#each data.posts as post}
-        <li><a href={`/blog/${post.slug}`}>{post.title}</a></li>
-    {/each}
-</ul>
+<section>
+    <h1>find latest tech skills in <span><div class="rotate-clock">z</div></span><div class="rotate-counter">z</div>ai.</h1>
+    <p>Master the top-notch technical skills in AI, Software Engineering, and Web Development. Stay updated with the latest technologies through hands-on tutorials and insightful content.</p>
+    <button>Discover Now</button>
+</section>
+
+
+<style>
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 80vh;
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    h1 {
+        margin-top: 0;
+        padding-top: 0;
+        line-height: 4.5rem;
+        font-size: 4rem;
+        margin-bottom: 1.5rem;
+    }
+    h1 span {
+        color: #ff5227;
+    }
+    h1 div {
+        display: inline-block;
+        transform-origin: 50% 65%;
+    }
+    .rotate-clock {
+        animation: rotate 8s linear 1;
+    }
+    .rotate-counter {
+        animation: rotate-counter 4s linear 2;
+    }
+    @keyframes rotate {
+        from {
+            transform: rotate3d(1, 0, 0, 0deg);
+        }
+        to {
+            transform: rotate3d(1, 0, 0, 360deg);
+        }
+    }
+    @keyframes rotate-counter {
+        from {
+            transform: rotate3d(0, 1, 0, 0deg);
+        }
+        to {
+            transform: rotate3d(0, 1, 0, -360deg);
+        }
+    }
+    section p {
+        font-size: 1.2rem;
+        color: #333;
+        margin-top: 0;
+        font-weight: 200;
+    }
+    section button {
+        padding: 0.8rem 2rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        background-color: #ff5227;
+        color: #fff;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        margin-top: 3rem;
+        transition: transform 0.3s ease;
+    }
+    section button:hover {
+        background-color: #ff5227;
+        transform: translateY(-0.2rem);
+    }
+</style>

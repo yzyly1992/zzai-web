@@ -6,7 +6,7 @@
 </script>
 
 <nav>
-    <a class="logo" href="/">zzai.</a>
+    <a class="logo" href="/"><span>z</span>zai.</a>
     <div class="menu">
         <button on:click={toggleShare} type="button" aria-label="Share">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-up-right-square-fill" viewBox="0 0 16 16">
@@ -32,7 +32,7 @@
 <slot />
 
 <footer>
-    <p>Copyright © 2024, Zzai - All Rights Reserved</p>
+    <p>© 2024 Zzai. All right reserved.</p>
 </footer>
 
 <style>
@@ -42,15 +42,21 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 1rem 2rem;
-        background-color: #f5f5f5;
+        padding: 0.8rem 2rem;
+        background-color: #fffdfa;
+        border-bottom: 0.5px solid #cbcbcb;
+        z-index: 10;
     }
     .logo {
-        font-size: 2rem;
+        font-size: 2.2rem;
         font-weight: bold;
         text-decoration: none;
         color: #333;
         cursor: pointer;
+        padding-bottom: 0.4rem;
+    }
+    .logo span {
+        color: #ff5227;
     }
     .menu {
         position: relative;
@@ -98,7 +104,8 @@
         justify-content: center;
         align-items: center;
         padding: 1rem;
-        background-color: #f5f5f5;
+        color: #403f3e;
         font-size: 0.9rem;
+        font-weight: 600;
     }
 </style>

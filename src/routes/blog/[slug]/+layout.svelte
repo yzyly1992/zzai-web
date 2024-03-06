@@ -30,6 +30,7 @@
     aside {
         max-width: 720px;
         margin: 2rem auto 6rem auto;
+        padding: 0 20px;
     }
     .grid {
         display: grid;
@@ -41,10 +42,15 @@
         color: inherit;
         border: 1px solid #F2F2F2;
         border-radius: 0.5rem;
-        padding: 1rem;
+        padding: 0;
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
+        transition: transform 0.2s, border 0.2s;
+    }
+    .card:hover {
+        transform: scale(1.01);
+        border: 1.5px solid #858585;
     }
     .cover {
         width: 100%;
@@ -53,7 +59,9 @@
         border-radius: 0.5rem;
     }
     .title {
+        margin: 0;
+        padding: 1.5rem;
         font-size: 1.2rem;
-        font-weight: 500;
+        font-weight: 600;
     }
 </style>

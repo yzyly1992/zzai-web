@@ -110,7 +110,7 @@
     }
     .content :global(blockquote) {
         font-style: italic;
-        border-left: 3px solid #003067;
+        border-left: 3px solid #505050;
         margin-left: -20px;
         padding-left: 23px;
         color: #666;
