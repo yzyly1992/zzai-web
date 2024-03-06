@@ -50,7 +50,7 @@
     }
     .card:hover {
         transform: scale(1.01);
-        border: 1.5px solid #858585;
+        border: 1px solid rgb(60, 60, 60);
     }
     .cover {
         width: 100%;

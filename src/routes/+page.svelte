@@ -1,5 +1,5 @@
 <svelte:head>
-    <title>Zzai | Master Top Tech Skills</title>
+    <title>Zzai | Trending Tech Skills</title>
     <meta name="description" content="Zzai - a tech skills sharing platform. Master the top-notch technical skills in AI, Software Engineering, and Web Development. Stay updated with the latest technologies through hands-on tutorials and insightful content.">
     <meta name="keywords" content="Tech skills, Technical skills, AI, Artificial intelligence, Software engineering, Web development, Hands-on tutorials, Technology updates, Learning platform, Tech education, Coding skills, Programming languages, IT skills, Tech tutorials, Online learning, Tech mastery, Cutting-edge technology, Tech insights, Software development, Digital skills">
 </svelte:head>
