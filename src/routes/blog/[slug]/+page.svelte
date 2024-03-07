@@ -81,6 +81,11 @@
     .tag button::first-letter {
         text-transform: uppercase;
     }
+    .cover {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
     .content :global(p) {
         font-family: Georgia, 'Times New Roman', Times, serif;
         margin-block: 2rem;
@@ -91,22 +96,38 @@
         font-size: 1.8rem;
         margin-block: 2rem;
     }
-    .content :global(.link) {
+    .content :global(h4) {
+        font-size: 1.5rem;
+        margin-block: 2rem;
+    }
+    .content :global(h5) {
+        font-size: 1.2rem;
+        margin-block: 2rem;
+    }
+    .content :global(a) {
         color: #3e98ff;
         text-decoration: underline;
         font-weight: 500;
     }
-    .content :global(pre code) {
+    .content :global(pre > code) {
         display: block;
-        background: rgb(8, 35, 14);
+        white-space: pre;
+        background: rgb(10, 44, 17);
         color: #f5d67b;
         -webkit-overflow-scrolling: touch;
-        overflow-x: scroll;
+        overflow-x: auto;
         max-width: 100%;
         min-width: 100px;
         padding: 1rem;
         line-height: 1.5rem;
-        border-radius: 0.5rem;
+    }
+    .content :global(span) {
+        font-family: monospace;
+        font-size: 0.9rem;
+        padding: 0.2rem 0.4rem;
+        background-color: #e4e4e4;
+        color:#505050;
+        border-radius: 0.2rem;
     }
     .content :global(blockquote) {
         font-style: italic;
