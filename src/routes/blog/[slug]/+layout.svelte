@@ -45,7 +45,6 @@
         padding: 0;
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
         transition: transform 0.2s, border 0.2s;
     }
     .card:hover {
@@ -56,11 +55,10 @@
         width: 100%;
         height: 250px;
         object-fit: cover;
-        border-radius: 0.5rem;
     }
     .title {
         margin: 0;
-        padding: 1.5rem;
+        padding: 1rem 1.5rem 1.5rem 1.5rem;
         font-size: 1.2rem;
         font-weight: 600;
     }

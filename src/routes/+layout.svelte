@@ -73,7 +73,7 @@
 <slot />
 
 <footer>
-    <p>© 2024 Zzai. All right reserved.</p>
+    <p>© 2024 Zzai ∙ <a href="/privacy">Privacy</a> ∙ <a href="/terms">Terms</a></p>
 </footer>
 
 <style>
@@ -169,6 +169,10 @@
         color: #403f3e;
         font-size: 0.9rem;
         font-weight: 600;
+    }
+    footer a {
+        color: #403f3e;
+        text-decoration: underline;
     }
     .message {
         position: fixed;

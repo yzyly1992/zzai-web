@@ -35,13 +35,17 @@
     }
     h1 div {
         display: inline-block;
-        transform-origin: 50% 65%;
+        transform-origin: 50% 63%;
+        margin: 0;
+        padding: 0;
     }
     .rotate-clock {
-        animation: rotate 8s linear 1;
+        animation: rotate 2s linear 1;
+        animation-delay: 0.5s;
     }
     .rotate-counter {
-        animation: rotate-counter 4s linear 2;
+        animation: rotate-counter 1s linear 2;
+        animation-delay: 0.5s;
     }
     @keyframes rotate {
         from {
