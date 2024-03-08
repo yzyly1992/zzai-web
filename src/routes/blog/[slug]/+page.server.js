@@ -1,5 +1,4 @@
 import { error } from "@sveltejs/kit";
-import { posts } from "./data.js";
 
 export async function load(event) {
     const { params } = event;

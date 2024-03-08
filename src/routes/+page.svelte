@@ -7,7 +7,7 @@
 <section>
     <h1>find latest tech skills in <span><div class="rotate-clock">z</div></span><div class="rotate-counter">z</div>ai.</h1>
     <p>Master the top-notch technical skills in AI, Software Engineering, and Web Development. Stay updated with the latest technologies through hands-on tutorials and insightful content.</p>
-    <button>Discover Now</button>
+    <button><a href="/home">Discover Now</a></button>
 </section>
 
 
@@ -74,7 +74,6 @@
         font-size: 1.2rem;
         font-weight: 600;
         background-color: #ff5227;
-        color: #fff;
         border: none;
         border-radius: 0.5rem;
         cursor: pointer;
@@ -84,5 +83,9 @@
     section button:hover {
         background-color: #ff5227;
         transform: translateY(-0.2rem);
+    }
+    section button a {
+        text-decoration: none;
+        color: #fff;
     }
 </style>
