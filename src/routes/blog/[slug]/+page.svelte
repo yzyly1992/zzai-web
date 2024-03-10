@@ -144,7 +144,10 @@
         line-height: 2rem;
     }
     .content :global(li) {
-        margin-block: 1rem;
+        font-family: inherit;
+        margin-block: 2rem;
+        font-size: large;
+        line-height: 2rem;
     }
     .content :global(figure) {
         margin: 0;
@@ -157,5 +160,20 @@
         color: #666;
         text-align: center;
         font-style: italic;
+    }
+    .content :global(table) {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        border: 1px solid #666;
+    }
+    .content :global(th) {
+        border: 1px solid #666;
+        padding: 0.7rem;
+        background: #ededed;
+    }
+    .content :global(td) {
+        border: 1px solid #666;
+        padding: 0.7rem;
     }
 </style>
