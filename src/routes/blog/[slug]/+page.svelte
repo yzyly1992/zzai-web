@@ -139,12 +139,11 @@
     .content :global(ul) {
         list-style: disc;
         padding-inline-start: 25px;
-        font-family: Georgia, 'Times New Roman', Times, serif;
         font-size: large;
         line-height: 2rem;
     }
     .content :global(li) {
-        font-family: inherit;
+        font-family: Georgia, 'Times New Roman', Times, serif;
         margin-block: 2rem;
         font-size: large;
         line-height: 2rem;

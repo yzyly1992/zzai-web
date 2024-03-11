@@ -7,7 +7,7 @@
 <section>
     <h1>find latest tech skills in <span><div class="rotate-clock">z</div></span><div class="rotate-counter">z</div>ai.</h1>
     <p>Master the top-notch technical skills in AI, Software Engineering, and Web Development. Stay updated with the latest technologies through hands-on tutorials and insightful content.</p>
-    <button><a href="/home">Discover Now</a></button>
+    <a href="/home"><button>Discover Now</button></a>
 </section>
 
 
@@ -35,7 +35,7 @@
     }
     h1 div {
         display: inline-block;
-        transform-origin: 50% 63%;
+        transform-origin: 50%;
         margin: 0;
         padding: 0;
     }
@@ -49,10 +49,10 @@
     }
     @keyframes rotate {
         from {
-            transform: rotate3d(1, 0, 0, 0deg);
+            transform: rotate3d(0, 1, 0, 0deg);
         }
         to {
-            transform: rotate3d(1, 0, 0, 360deg);
+            transform: rotate3d(0, 1, 0, 360deg);
         }
     }
     @keyframes rotate-counter {
@@ -79,13 +79,10 @@
         cursor: pointer;
         margin-top: 3rem;
         transition: transform 0.3s ease;
+        color: white;
     }
     section button:hover {
         background-color: #ff5227;
         transform: translateY(-0.2rem);
-    }
-    section button a {
-        text-decoration: none;
-        color: #fff;
     }
 </style>
