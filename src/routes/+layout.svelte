@@ -22,7 +22,11 @@
 </script>
 
 <nav>
-    <a class="logo" href="/"><span>z</span>zai.</a>
+    {#if $page.url.pathname.includes('/cn')}
+        <a class="logo" href="/cn"><span>z</span>zai.</a>
+    {:else}
+        <a class="logo" href="/"><span>z</span>zai.</a>
+    {/if}
     <div class="menu">
         <button aria-label="Share" on:click={toggleShare}>
             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-arrow-up-right-square-fill" viewBox="0 0 16 16">
