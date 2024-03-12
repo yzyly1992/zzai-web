@@ -17,7 +17,7 @@
         <h2>最新文章</h2>
         <div class="grid">
             {#each data as post}
-                <a href={`/blog/${post.slug}`} class="card">
+                <a href={`/cn/blog/${post.slug}`} class="card">
                     <img src={post.cover} alt="cover image of {post.title}" class="cover">
                     <p class="title">{post.title}</p>
                 </a>
