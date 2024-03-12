@@ -19,7 +19,7 @@
     <p class="subtitle">{data.post.subtitle}</p>
     <p class="summary">{data.post.summary}</p>
     <p class="author">{data.post.author.toUpperCase()}</p>
-    <p class="date">Published {formatDate(data.post.date)}  •  {data.post.length} minutes read</p>
+    <p class="date">发布于 {formatDate(data.post.date)}  •  {data.post.length} 分钟阅读</p>
     <!-- svelte-ignore a11y-img-redundant-alt -->
     <img src={data.post.cover} alt="Cover Image" class="cover">
     <div class="content">{@html data.post.content}</div>
