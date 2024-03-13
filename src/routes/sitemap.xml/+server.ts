@@ -16,8 +16,23 @@ export async function GET({ platform }) {
         xmlns:video="https://www.google.com/schemas/sitemap-video/1.1"
       >
   
-         <url>
+        <url>
           <loc>https://zzai.tech</loc>
+          <changefreq>daily</changefreq>
+          <priority>0.7</priority>
+        </url>
+        <url>
+          <loc>https://zzai.tech/cn</loc>
+          <changefreq>daily</changefreq>
+          <priority>0.7</priority>
+        </url>
+        <url>
+          <loc>https://zzai.tech/home</loc>
+          <changefreq>daily</changefreq>
+          <priority>0.7</priority>
+        </url>
+        <url>
+          <loc>https://zzai.tech/cn/home</loc>
           <changefreq>daily</changefreq>
           <priority>0.7</priority>
         </url>
@@ -25,6 +40,16 @@ export async function GET({ platform }) {
             return `
             <url>
                 <loc>https://zzai.tech/blog/${post.slug}</loc>
+                <changefreq>daily</changefreq>
+                <priority>0.7</priority>
+            </url>
+            `;
+        }).join("")}
+
+        ${result.results.map((post: any) => {
+            return `
+            <url>
+                <loc>https://zzai.tech/cn/blog/${post.slug}</loc>
                 <changefreq>daily</changefreq>
                 <priority>0.7</priority>
             </url>
