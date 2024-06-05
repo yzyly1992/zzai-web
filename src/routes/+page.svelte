@@ -18,17 +18,17 @@
         align-items: center;
         justify-content: center;
         height: 80vh;
+        gap: 1.5rem;
         text-align: center;
         max-width: 600px;
         margin: 0 auto;
         padding: 0 20px;
     }
     h1 {
-        margin-top: 0;
-        padding-top: 0;
+        margin: 0;
+        padding: 0;
         line-height: 4.5rem;
         font-size: 4rem;
-        margin-bottom: 1.5rem;
     }
     h1 span {
         color: #ff5227;
@@ -66,8 +66,9 @@
     section p {
         font-size: 1.2rem;
         color: #333;
-        margin-top: 0;
+        margin: 0;
         font-weight: 200;
+        margin-bottom: 1rem;
     }
     section button {
         padding: 0.8rem 2rem;
@@ -77,7 +78,6 @@
         border: none;
         border-radius: 0.5rem;
         cursor: pointer;
-        margin-top: 3rem;
         transition: transform 0.3s ease;
         color: white;
     }
