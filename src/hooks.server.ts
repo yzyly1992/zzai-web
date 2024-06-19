@@ -1,4 +1,5 @@
 import { dev } from '$app/environment';
+import { redirect } from '@sveltejs/kit';
 
 /*
   When developing, this hook will add proxy objects to the `platform` object which
@@ -20,5 +21,19 @@ export const handle = async ({ event, resolve }) => {
 		};
 	}
 
-	return resolve(event);
+	const pathname = event.url.pathname;
+    
+    // Only check cookies for routes under /manage
+    if (pathname.startsWith('/manage')) {
+		const sessionId = event.cookies.get('sessionId');
+		// console.log('sessionId', sessionId);
+		if (!sessionId) {
+			console.log('redirect to /');
+			throw redirect(302, '/')
+		}
+    }
+    
+    // Continue with the request for other routes
+    const response = await resolve(event);
+    return response;
 };
