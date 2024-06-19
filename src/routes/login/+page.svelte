@@ -27,13 +27,52 @@
     }
   }
 </script>
+<section>
+  <h1>Management Portal</h1>
+  <form on:submit={handleSubmit}>
+    <label for="username">Username</label>
+    <input type="text" id="username" bind:value={username} required />
+  
+    <label for="password">Password</label>
+    <input type="password" id="password" bind:value={password} required />
+    <br>
+    <button type="submit">Login</button>
+  </form>
+</section>
 
-<form on:submit={handleSubmit}>
-  <label for="username">Username</label>
-  <input type="text" id="username" bind:value={username} required />
+<style>
+  section {
+    max-width: 300px;
+    margin: 20px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 
-  <label for="password">Password</label>
-  <input type="password" id="password" bind:value={password} required />
+  label {
+    font-weight: bold;
+  }
 
-  <button type="submit">Login</button>
-</form>
+  input {
+    padding: 0.6rem;
+    border-radius: 0.25rem;
+    border: 1px solid #ccc;
+  }
+
+  button {
+    padding: 0.8rem;
+    border-radius: 0.25rem;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+  }
+</style>

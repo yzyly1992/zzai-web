@@ -15,6 +15,11 @@
     let id = data.post.id;
 
     async function updatePost() {
+        // check if slug is in the correct format e.g. "my-first-post"
+        if (!slug.match(/^[a-z0-9-]+$/)) {
+            alert('Slug must be in the correct format e.g. "my-first-post"');
+            return;
+        }
         const post = {
             title,
             subtitle,
@@ -53,8 +58,8 @@
     }
 </script>
 
-<main>
-    <h1>Create Post</h1>
+<section>
+    <h1>Update Post</h1>
 
     <form on:submit|preventDefault={updatePost}>
         <label>
@@ -63,54 +68,103 @@
         </label>
         <label>
             Title:
-            <input type="text" bind:value={title} />
+            <input type="text" bind:value={title} required />
         </label>
 
         <label>
             Subtitle:
-            <input type="text" bind:value={subtitle} />
+            <input type="text" bind:value={subtitle} required />
         </label>
 
         <label>
             Slug:
-            <input type="text" bind:value={slug} />
+            <input type="text" bind:value={slug} required />
         </label>
 
         <label>
             Author:
-            <input type="text" bind:value={author} />
+            <input type="text" bind:value={author} required />
         </label>
 
         <label>
             Date:
-            <input type="text" bind:value={date} />
+            <input type="date" bind:value={date} required />
         </label>
 
         <label>
             Length:
-            <input type="number" bind:value={length} />
+            <input type="number" bind:value={length} required />
         </label>
 
         <label>
             Tag:
-            <input type="text" bind:value={tag} />
+            <input type="text" bind:value={tag} required />
         </label>
 
         <label>
             Cover:
-            <input type="text" bind:value={cover} />
+            <input type="text" bind:value={cover} required />
         </label>
 
         <label>
             Summary:
-            <textarea bind:value={summary}></textarea>
+            <textarea bind:value={summary} required></textarea>
         </label>
 
         <label>
             Content:
-            <textarea bind:value={content}></textarea>
+            <textarea bind:value={content} required></textarea>
         </label>
-
+        <br>
         <button type="submit">Update Post</button>
         <button on:click={() => goto('/manage')}>Cancel</button>
-</main>
+    </form>
+</section>
+
+<style>
+        section {
+        max-width: 720px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    h1 {
+        font-size: 2.2rem;
+        margin-bottom: 0;
+    }
+    label {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        width: 100%;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    input {
+        display: flex;
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+    textarea {
+        display: flex;
+        height: 250px;
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+    button {
+        padding: 0.6rem 1rem;
+        background-color: #333;
+        font-weight: bold;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #555;
+    }
+</style>
