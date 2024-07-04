@@ -2,7 +2,7 @@ import { error } from "@sveltejs/kit";
 
 export async function load(event) {
     // get the posts with page 1 and limit 5 with POST method
-    const data = await event.fetch(`/api/posts`, {
+    const posts = await event.fetch(`/api/posts`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -11,11 +11,11 @@ export async function load(event) {
             page: 0,
             limit: 5,
         }),
-    });
-    const posts_data = await data.json();
-    const posts = posts_data.results;
+    }).then((res) => res.json()).then((data) => data.results);
+    const count = await event.fetch(`/api/posts_count`).then((res) => res.json()).then((data) => data.results[0].count);
+    console.log(count);
     if (!posts) {
         return error(404, "Post not found");
     };
-    return { posts };
+    return { posts, count };
 }

@@ -1,5 +1,22 @@
 <script>
     export let data;
+    let pageIndex = 0;
+    let pageCount = Math.ceil(data.count / 5);
+    function loadMore() {
+        if (pageIndex + 1 >= pageCount) return;
+        fetch(`/api/posts`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ page: ++pageIndex, limit: 5 }),
+        })
+            .then((res) => res.json())
+            .then((res) => {
+                console.log(pageIndex);
+                data.posts = [...data.posts, ...res.results];
+            });
+    }
 </script>
 
 
@@ -13,7 +30,7 @@
         </a>
     {/each}
     </div>
-    <button>Load More</button>
+    <button on:click={loadMore}>Load More</button>
 </section>
 
 <style>
