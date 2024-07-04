@@ -16,6 +16,7 @@
       <li>{post.title} [{post.id}]
         <div class="button-container">
         <button on:click={() => goto(`/manage/edit/${post.slug}`)}>Edit</button>
+        <button on:click={() => goto(`/blog/${post.slug}`)}>View</button>
         <button on:click={async () => {
           const result = await fetch(`/api/delete_post`, {
             method: 'POST',
