@@ -1,10 +1,10 @@
 // src/routes/api/login/+server.ts
 import type { RequestHandler } from '@sveltejs/kit';
-import { USERNAME, HASHED_PASSWORD } from '../../../config/auth';
+import { USERNAME, HASHED_PASSWORD } from '../../../../config/auth';
 import bcrypt from 'bcryptjs';
 
 export const POST: RequestHandler = async ({ request }) => {
-  const { username, password } = await request.json() as { username: string, password: string };
+const { username, password } = await request.json() as { username: string, password: string };
 
   if (username === USERNAME) {
     const match = await bcrypt.compareSync(password, HASHED_PASSWORD);

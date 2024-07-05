@@ -29,9 +29,15 @@ export const handle = async ({ event, resolve }) => {
 		// console.log('sessionId', sessionId);
 		if (!sessionId) {
 			console.log('redirect to /');
-			throw redirect(302, '/')
+			throw redirect(302, '/');
 		}
-    }
+    } else if (pathname.startsWith('/cn/manage')) {
+		const sessionId = event.cookies.get('sessionId');
+		if (!sessionId) {
+			console.log('redirect to /cn');
+			throw redirect(302, '/cn');
+		}
+	}
     
     // Continue with the request for other routes
     const response = await resolve(event);

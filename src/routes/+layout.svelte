@@ -30,10 +30,6 @@
     onMount(() => {
         document.addEventListener('click', handleClickOutside);
     });
-
-    onDestroy(() => {
-        document.removeEventListener('click', handleClickOutside);
-    });
 </script>
 
 <nav>

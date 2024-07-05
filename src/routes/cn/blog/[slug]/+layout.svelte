@@ -5,7 +5,13 @@
      */
 	let data: any[] = [];
 	onMount(async () => {
-        data = await fetch('/cn/api/posts').then((x: any) => x.json()).then((x) => x.results);
+        data = await fetch('/cn/api/posts', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ limit: 4 }),
+        }).then((x: any) => x.json()).then((x) => x.results);
 	});
 </script>
 
